@@ -1,0 +1,51 @@
+#preloader{
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    z-index: 99;
+
+    .wrapper{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .square{
+            background: $theme;
+            float: left;
+            width: calc(100% / 3);
+            height: calc(100% / 3);
+            animation: loading 1.3s infinite ease-in-out;
+        }
+        
+        .square4, .square8{
+            animation-delay: 0.1s;
+        }
+        
+        .square1, .square5, .square9{
+            animation-delay: 0.2s;
+        }
+        
+        .square2, .square6{
+            animation-delay: 0.3s;
+        }
+        
+        .square3{
+            animation-delay: 0.4s;
+        }
+    }
+    
+    
+    
+    @keyframes loading{
+        0%, 70%, 100%{
+            transform: scale3d(1, 1, 1);
+        }
+        35%{
+            transform: scale3d(0, 0, 1);
+        }
+    }
+}

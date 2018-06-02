@@ -1,0 +1,58 @@
+$gray: #6c757d;
+$theme: #008080;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 8px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-color: $gray;
+        background-image: -webkit-linear-gradient(90deg,
+                                                transparent,
+                                                rgba(0, 0, 0, 0.4) 50%,
+                                                transparent,
+                                                transparent)
+    }
+}
+
+a{
+    color: inherit !important;
+}
+
+.comforta{
+    font-family: 'Comfortaa', cursive;
+}
+
+.themeColor{
+    color: $theme;
+}
+
+.themeBg{
+    background-color: $theme;
+    color: white;
+}
+
+.px-3125{
+    padding: 0 3.125rem;
+}
