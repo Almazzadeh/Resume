@@ -1,7 +1,6 @@
 #setting{
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    @extend %centerY;
     left: 0;
     padding: 10px;
     // border: 1px solid red;
@@ -20,6 +19,7 @@
     .bar{
         position: relative;
         border: 1px solid $gray;
+        background: white;
 
         span{
             position: absolute;
@@ -57,49 +57,76 @@
             }
 
             span::before{
-                transform: rotate(45deg);
+                transform: rotate(135deg);
                 top: 0;
             }
 
             span::after{
-                transform: rotate(135deg);
+                transform: rotate(45deg);
                 top: 0;
             }
         }
     }
 
+    .circle:not(.bar){
+        transition: .5s;
+        transform: translate3d(-100%, 0, 0);
+        
+        &.active{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    // COLOR WRAPPER
     .colorWrapper{
         overflow: hidden;
 
         span.circle{
-            transform: translate3d(-100%, 0, 0);
-            transition: .5s;
-
             &:nth-child(2){
-                transition-delay: .3s;
+                transition-delay: .1s;
             }
 
             &:nth-child(3){
-                transition-delay: .6s;
+                transition-delay: .2s;
             }
 
             &:nth-child(4){
-                transition-delay: .9s;
+                transition-delay: .3s;
             }
 
             &:nth-child(5){
-                transition-delay: 1.2s;
+                transition-delay: .4s;
             }
 
             &:nth-child(6){
-                transition-delay: 1.5s;
+                transition-delay: .5s;
             }
         }
+    }
 
-        span.circle.active{
-            transform: translate3d(0, 0, 0);
+
+    // LANGUAGE WRAPPER
+    .languageWrapper{
+        overflow: hidden;
+
+        .circle{
+            background-size: cover;
+            background-position: center center;
+
+            &:nth-child(1){
+                transition-delay: .2s;
+                background-image: url('../images/gb.png');
+            }
+
+            &:nth-child(2){
+                transition-delay: .1s;
+                background-image: url('../images/ru.png');
+                border: 1px solid lightgray;
+            }
+
+            &:nth-child(3){
+                background-image: url('../images/az.png');
+            }
         }
-
-        
     }
 }

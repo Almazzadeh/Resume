@@ -1,3 +1,8 @@
+#timeline .timeline-sm-xs .linewrapper {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +10,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'montserrat';
   overflow-x: hidden;
 }
 body::-webkit-scrollbar-track {
@@ -28,7 +33,7 @@ a {
 }
 
 .comforta {
-  font-family: 'Comfortaa', cursive;
+  font-family: "comfortaa";
 }
 
 .themeColor {
@@ -40,10 +45,14 @@ a {
   color: white;
 }
 
-.px-3125 {
-  padding: 0 3.125rem;
+@font-face {
+  font-family: 'comfortaa';
+  src: url("../fonts/Comfortaa-Regular.otf");
 }
-
+@font-face {
+  font-family: 'montserrat';
+  src: url("../fonts/Montserrat-Light.otf");
+}
 #preloader {
   width: 100vw;
   height: 100vh;
@@ -178,27 +187,42 @@ a {
     transform: translate3d(0, 0, 0) translate(-50%, -50%);
   }
 }
-#setting {
+#menuWrapper {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
-  padding: 10px;
+  right: 30px;
+  border: 1px solid red;
+  z-index: 999;
+}
+#menuWrapper .circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: 1px solid #6c757d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  user-select: none;
+  transition: .2s;
+  cursor: pointer;
+  opacity: 1;
+}
+#menuWrapper .circle img {
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#menuWrapper .bar {
   z-index: 9999;
 }
-#setting .circle {
-  width: 25px;
-  height: 25px;
-  border-radius: 100%;
-  display: block;
-  margin-bottom: 13px;
-  cursor: pointer;
-}
-#setting .bar {
-  position: relative;
-  border: 1px solid #6c757d;
-}
-#setting .bar span {
+#menuWrapper .bar span {
   position: absolute;
   width: 50%;
   top: 50%;
@@ -206,65 +230,75 @@ a {
   transform: translate(-50%, -50%);
   height: 2px;
   background: #6c757d;
-  transition: .5s;
+  transition: .6s;
 }
-#setting .bar span::before, #setting .bar span::after {
+#menuWrapper .bar span::before, #menuWrapper .bar span::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background: #6c757d;
-  transition: .5s;
+  transition: .6s;
 }
-#setting .bar span::before {
-  top: -5px;
+#menuWrapper .bar span::before {
+  top: -6px;
 }
-#setting .bar span::after {
-  top: 5px;
+#menuWrapper .bar span::after {
+  top: 6px;
 }
-#setting .bar.active span {
+#menuWrapper .bar.active span {
   background: transparent;
 }
-#setting .bar.active span::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-#setting .bar.active span::after {
+#menuWrapper .bar.active span::before {
   transform: rotate(135deg);
   top: 0;
 }
-#setting .colorWrapper {
-  overflow: hidden;
+#menuWrapper .bar.active span::after {
+  transform: rotate(45deg);
+  top: 0;
 }
-#setting .colorWrapper span.circle {
-  transform: translate3d(-100%, 0, 0);
-  transition: .5s;
+#menuWrapper .language, #menuWrapper .color, #menuWrapper .position {
+  opacity: 0;
 }
-#setting .colorWrapper span.circle:nth-child(2) {
-  transition-delay: .3s;
+#menuWrapper .language {
+  transition-delay: .2s;
 }
-#setting .colorWrapper span.circle:nth-child(3) {
-  transition-delay: .6s;
+#menuWrapper .language .languageWrapper .circle {
+  background-size: cover;
+  background-position: center center;
 }
-#setting .colorWrapper span.circle:nth-child(4) {
-  transition-delay: .9s;
+#menuWrapper .language #aze {
+  background-image: url("../images/az.png");
 }
-#setting .colorWrapper span.circle:nth-child(5) {
-  transition-delay: 1.2s;
+#menuWrapper .language #rus {
+  background-image: url("../images/ru.png");
+  border-top: 1px solid lightgrey;
 }
-#setting .colorWrapper span.circle:nth-child(6) {
-  transition-delay: 1.5s;
+#menuWrapper .language #eng {
+  background-image: url("../images/gb.png");
 }
-#setting .colorWrapper span.circle.active {
-  transform: translate3d(0, 0, 0);
+#menuWrapper .color {
+  transition-delay: .4s;
+}
+#menuWrapper .colorWrapper .circle,
+#menuWrapper .languageWrapper .circle,
+#menuWrapper .positionWrapper .circle {
+  width: 35px;
+  height: 35px;
+  border: none;
+  box-shadow: 0 0 0 #6c757d;
+}
+#menuWrapper .colorWrapper .circle:hover,
+#menuWrapper .languageWrapper .circle:hover,
+#menuWrapper .positionWrapper .circle:hover {
+  box-shadow: -1px 1px 1px 0px #6c757d;
+}
+#menuWrapper .positionWrapper .circle {
+  border: 1px solid #6c757d;
 }
 
-.progress-tracker ul li.active {
-  border-color: inherit;
-  background-color: #6c757d;
-}
-.progress-tracker .pt-description {
-  font-size: 0.8em;
+.about, .softwareSkill, .education, .languageandhobby {
+  border: 1px solid olive;
 }
 
 .about {
@@ -272,10 +306,13 @@ a {
 }
 .about .image {
   width: 100%;
-  padding-top: 100%;
-  background: url("../p.jpg");
-  background-size: cover;
-  background-position: center center;
+}
+.about .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 100%;
 }
 
 #timeline .timeline-md-lg {
@@ -338,8 +375,6 @@ a {
 #timeline .timeline-sm-xs .linewrapper {
   position: absolute;
   height: 90%;
-  top: 50%;
-  transform: translateY(-50%);
   width: 100%;
   left: 0;
   overflow: hidden;
@@ -371,6 +406,7 @@ a {
   margin: 0;
   width: 33%;
   text-align: center;
+  font-size: .7em;
 }
 #timeline .timeline-sm-xs .col-12 p.edu {
   padding: 10px;
@@ -386,6 +422,29 @@ a {
   left: 50%;
   transform: translateX(-50%);
   background: white;
+}
+
+.softwareSkill .col-lg-6 .row {
+  align-items: center;
+  margin-bottom: 10px;
+}
+.softwareSkill .myprogress {
+  height: 16px;
+  background: #ccc;
+  border-radius: 20px;
+}
+.softwareSkill .myprogress .myprogress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 16px;
+}
+.softwareSkill .myprogress .myprogress-bar span {
+  font-size: .7em;
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
 }
 
 .languageandhobby .d-flex div {
@@ -453,15 +512,42 @@ a {
   transform: translate(-50%, -50%);
   font-weight: bold;
   color: white;
+  text-align: center;
+  font-size: 1.3em;
 }
 
 @media screen and (max-width: 767.5px) {
+  .about .rightSide {
+    margin-top: 2rem;
+  }
+
   .txt-sm-center {
     text-align: center !important;
   }
 
   .interest {
     margin-top: 3rem;
+  }
+
+  .languageandhobby .d-flex {
+    justify-content: center;
+  }
+}
+@media print {
+  .imageWrapper {
+    display: block !important;
+  }
+
+  .rightSide a {
+    text-decoration: none;
+  }
+
+  #setting, #progress-tracker {
+    display: none;
+  }
+
+  .themeBg, .myprogress {
+    -webkit-print-color-adjust: exact;
   }
 }
 

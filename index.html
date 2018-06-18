@@ -6,68 +6,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resume</title>
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400|Quicksand" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400|Quicksand" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
     <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/style/animate.css">
-    <link rel="stylesheet" href="vendors/progressbar/jquery.lineProgressbar.css">
     <link rel="stylesheet" href="vendors/progresscircle/progresscircle.css">
-    <link rel="stylesheet" href="vendors/position/jquery.progresstracker.css">
     <link rel="stylesheet" href="vendors/style/style.css">
 </head>
 
 <body>
-    <!-- <div id="preloader">
-        <div class="wrapper">
-            <div class="square square1"></div>
-            <div class="square square2"></div>
-            <div class="square square3"></div>
-            <div class="square square4"></div>
-            <div class="square square5"></div>
-            <div class="square square6"></div>
-            <div class="square square7"></div>
-            <div class="square square8"></div>
-            <div class="square square9"></div>
+    <!-- COLORS AND LANGUAGES SETTINGS START HERE -->
+    <!-- <div id="setting">
+        <div class="languageWrapper">
+            <span id="eng" class="circle"></span>
+            <span id="rus" class="circle"></span>
+            <span id="aze" class="circle"></span>
         </div>
-    </div> -->
-
-    <div id="setting">
-        <div class="circle bar"><span></span></div>
+        <div class="circle bar">
+            <span></span>
+        </div>
         <div class="colorWrapper">
             <span data-color="#008080" class="circle"></span>
             <span data-color="#bd2130" class="circle"></span>
             <span data-color="#0062cc" class="circle"></span>
-            <span data-color="#ffc107" class="circle"></span>
+            <span data-color="#ffc107" data-textcolor="black" class="circle"></span>
             <span data-color="#1e7e34" class="circle"></span>
             <span data-color="#2c3531" class="circle"></span>
         </div>
+    </div> -->
+    <!-- COLORS AND LANGUAGES SETTINGS END HERE -->
+    <!-- PROGRESS TRACKER START HERE -->
+    <!-- <ul id="progress-tracker">
+        <li>
+            <div class="content">About</div>
+            <div data-class="about" class="circle active"></div>
+        </li>
+        <li>
+            <div class="content">Education</div>
+            <div data-class="education" class="circle"></div>
+        </li>
+        <li>
+            <div class="content">Software Skills</div>
+            <div data-class="softwareSkill" class="circle"></div>
+        </li>
+        <li>
+            <div class="content">Language Skills and Interests</div>
+            <div data-class="languageandhobby" class="circle"></div>
+        </li>
+    </ul> -->
+    <!-- PROGRESS TRACKER END HERE -->
+
+    <!-- MENU SECTION START HERE -->
+    <div id="menuWrapper">
+
+        <!-- COLOR SECTION -->
+        <div class="color circle">
+            <div class="colorWrapper">
+                <div class="circle" data-color="#008080"></div>
+                <div class="circle" data-color="#bd2130"></div>
+                <div class="circle" data-color="#0062cc"></div>
+                <div class="circle" data-color="#ffc107" data-textColor="black"></div>
+                <div class="circle" data-color="#1e7e34"></div>
+            </div>
+
+            <div class="circle clickColor">
+                <img src="vendors/images/paint-brush.png" alt="">
+            </div>
+        </div>
+
+        <!-- LANGUAGE SECTION -->
+        <div class="language circle">
+            <div class="languageWrapper">
+                <div id="aze" class="circle">
+                </div>
+                <div id="rus" class="circle"></div>
+                <div id="eng" class="circle"></div>
+            </div>
+            <div class="circle clickLanguage">
+                <img src="vendors/images/translate.png" alt="">
+            </div>
+        </div>
+
+        <!-- POSITION SECTION -->
+        <div class="position circle">
+            <div class="positionWrapper">
+                <div class="circle" data-class="about">
+                    <img src="vendors/images/user.png" alt="">
+                </div>
+                <div class="circle" data-class="education">
+                    <img src="vendors/images/mortarboard.png" alt="">
+                </div>
+                <div class="circle" data-class="softwareSkill">
+                    <img src="vendors/images/cog.png" alt="">
+                </div>
+                <div class="circle" data-class="languageandhobby">
+                    <img src="vendors/images/puzzle.png" alt="">
+                </div>
+            </div>
+            <div class="circle clickPosition">
+                <img src="vendors/images/placeholder.png" alt="">
+            </div>
+        </div>
+
+        <!-- MENU BAR -->
+        <div class="bar circle">
+            <span></span>
+        </div>
     </div>
+    <!-- MENU SECTION END HERE -->
+
+
     <div class="container">
         <!-- ABOUT SECTION -->
-        <section class="about py-5 pt-section" data-name="About" id="ptsection-one">
+        <section class="about py-5">
             <div class="row">
                 <!-- ABOUT LEFT SIDE -->
                 <div class="animated slideInLeft col-lg-5 col-md-5 txt-sm-center">
-                    <h1 class="themeColor comforta">Jeyhun</h1>
-                    <h1 class="themeColor comforta font-weight-bold">Almazzade</h1>
-                    <h2 class="comforta font-weight-bold">Web developer</h2>
+                    <h1 id="name" class="themeColor comforta">Jeyhun</h1>
+                    <h1 id="surname" class="themeColor comforta font-weight-bold">Almazzade</h1>
+                    <h2 id="profession" class="comforta font-weight-bold">Web developer</h2>
                 </div>
 
                 <!-- ABOUT CENTER SIDE -->
-                <div class="animated slideInDown col-lg-2 col-md-2 d-none d-sm-block d-xs-block">
-                    <div class="image rounded-circle"></div>
+                <div class="imageWrapper animated slideInDown col-lg-2 col-md-2 d-none d-sm-block d-xs-block">
+                    <div class="image rounded-circle">
+                        <img src="vendors/images/p.jpg" alt="">
+                    </div>
                 </div>
 
                 <!-- ABOUT RIGHT SIDE -->
-                <div class="animated slideInRight col-lg-5 col-md-5">
+                <div class="animated slideInRight col-lg-5 col-md-5 rightSide">
                     <div class="text-right txt-sm-center text-muted">
-                        <p>13 March 1995
+                        <p>
+                            <span id="birthday">13 March 1995</span>
                             <i class="ml-3 fas fa-user-alt"></i>
                         </p>
-                        <p>(+994) 70 367 18 70
+                        <a href="tel:+994703671870" class="d-inline-block mb-3">(+994) 70 367 18 70
                             <i class="ml-3 fas fa-phone"></i>
-                        </p>
+                        </a>
                         <p>jeyhunva@code.edu.az
                             <i class="ml-3 fas fa-envelope"></i>
                         </p>
@@ -81,9 +158,11 @@
         </section>
 
         <!-- EDUCATION SECTION -->
-        <section class="education py-5 animated fadeIn pt-section" data-name="Education" id="ptsection-two">
+        <section class="education py-5 animated fadeIn">
             <h2 class="comforta mb-3">
-                <i class="text-muted mr-2 fas fa-graduation-cap"></i> Education</h2>
+                <i class="text-muted mr-2 fas fa-graduation-cap"></i>
+                <span id="educationHeader">Education</span>
+            </h2>
             <div id="timeline">
                 <div class="container">
                     <div class="row">
@@ -92,28 +171,27 @@
                             <div class="row">
                                 <!-- 1TH SECTION -->
                                 <div class="col-md-3">
-                                    <div class="delay2 fadeInDownCenter top themeColor left">2001 - 2005</div>
+                                    <div class="delay2 fadeInDownCenter top themeColor left font-weight-bold">2001 - 2005</div>
                                     <span class="animated delay2 fadeIn circle left"></span>
-                                    <div class="delay2 fadeInUpCenter bottom themeBg left">
-                                        158
-                                        <br> High School
+                                    <div id="school" class="delay2 fadeInUpCenter bottom themeBg left">
+                                        №158 High School
                                     </div>
                                 </div>
 
                                 <!-- 2ND SECTION -->
                                 <div class="col-md-3">
-                                    <div class="delayHalf fadeInDownCenter top themeBg center">Technical Humanitarian Lyceum</div>
+                                    <div id="lyceum" class="delayHalf fadeInDownCenter top themeBg center">Technical Humanitarian Lyceum</div>
                                     <span class="animated delayHalf fadeIn circle center"></span>
-                                    <div class="delayHalf fadeInUpCenter bottom themeColor center">
+                                    <div class="font-weight-bold delayHalf fadeInUpCenter bottom themeColor center">
                                         2005 - 2012
                                     </div>
                                 </div>
 
                                 <!-- 3RD SECTION -->
                                 <div class="col-md-3">
-                                    <div class="delayHalf fadeInDownCenter top themeColor center">2012-2016</div>
+                                    <div class="delayHalf fadeInDownCenter top themeColor center font-weight-bold">2012-2016</div>
                                     <span class="animated delayHalf fadeIn circle center"></span>
-                                    <div class="delayHalf fadeInUpCenter bottom themeBg center">
+                                    <div id="university" class="delayHalf fadeInUpCenter bottom themeBg center">
                                         Azerbaijan Technical University
                                     </div>
                                 </div>
@@ -122,7 +200,7 @@
                                 <div class="col-md-3">
                                     <div class="delay2 fadeInDownRight top themeBg right">Code Academy</div>
                                     <span style="right: 24%;" class="animated delay2 fadeIn circle right"></span>
-                                    <div class="delay2 fadeInUpRight bottom themeColor right">
+                                    <div class="font-weight-bold delay2 fadeInUpRight bottom themeColor right">
                                         2017-2018
                                     </div>
                                 </div>
@@ -139,12 +217,12 @@
                                 <div class="col-12">
                                     <p class="edu themeBg animated fadeInLeft">158 High School</p>
                                     <span class="circle animated fadeIn"></span>
-                                    <p class="themeColor animated fadeInRight">2001-2005</p>
+                                    <p class="themeColor animated fadeInRight font-weight-bold">2001-2005</p>
                                 </div>
 
                                 <!-- 2ND SECTION -->
                                 <div class="col-12 delay7">
-                                    <p class="themeColor animated fadeInLeft">2005-2012</p>
+                                    <p class="themeColor animated fadeInLeft font-weight-bold">2005-2012</p>
                                     <span class="circle animated fadeIn"></span>
                                     <p class="edu themeBg animated fadeInRight">Technical Humanitarian Lyceum</p>
                                 </div>
@@ -153,12 +231,12 @@
                                 <div class="col-12 delay14">
                                     <p class="edu themeBg animated fadeInLeft">Azerbaijan Technical University</p>
                                     <span class="circle animated fadeIn"></span>
-                                    <p class="themeColor animated fadeInRight">2012-2016</p>
+                                    <p class="themeColor animated fadeInRight font-weight-bold">2012-2016</p>
                                 </div>
 
                                 <!-- 4TH SECTION -->
                                 <div class="col-12 delay21">
-                                    <p class="themeColor animated fadeInLeft">2017-2018</p>
+                                    <p class="themeColor animated fadeInLeft font-weight-bold">2017-2018</p>
                                     <span class="circle animated fadeIn"></span>
                                     <p class="edu themeBg animated fadeInRight">Code Academy</p>
                                 </div>
@@ -173,34 +251,52 @@
         </section>
 
         <!-- SOFTWARE SKILL SECTION -->
-        <section class="softwareSkill py-5 pt-section" data-name="Software Skills" id="ptsection-three">
+        <section class="softwareSkill py-5">
             <h2 class="comforta mb-3">
-                <i class="text-muted mr-2 fas fa-cog"></i> Software Skills</h2>
+                <i class="text-muted mr-2 fas fa-cog"></i>
+                <span id="softwareHeader">Software Skills</span>
+            </h2>
             <div class="row">
                 <!-- SKILLS LEFT SIDE -->
                 <div class="col-lg-6 col-md-6">
                     <div class="row">
                         <div class="col-lg-4 col-md-4">Archicad</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="archicad"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="70">
+                                    <span class="title">70</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4">Corel Draw</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="corelDraw"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="55">
+                                    <span class="title">55</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4">Adobe Illustrator</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="illustrator"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="55">
+                                    <span class="title">55</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4">Adobe Photoshop</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="photoshop"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="90">
+                                    <span class="title">90</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -209,25 +305,41 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4">HTML/CSS/SASS</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="html"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="90">
+                                    <span class="title">90</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4">JavaScript/JQuery</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="jquery"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="85">
+                                    <span class="title">85</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4">C#</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="csharp"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="75">
+                                    <span class="title">75</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4">SQL Server</div>
                         <div class="col-lg-8 col-md-8">
-                            <div id="sql"></div>
+                            <div class="myprogress">
+                                <div class="myprogress-bar themeBg" data-width="77">
+                                    <span class="title">77</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,40 +347,46 @@
         </section>
 
         <!-- LANGUAGE SKILL AND HOBBIES -->
-        <section class="languageandhobby py-5 pt-section" data-name="Languages and Interests" id="ptsection-four">
+        <section class="languageandhobby py-5">
             <div class="row">
+                <!-- LANGUAGE SKILLS -->
                 <div class="col-md-6">
                     <h2 class="comforta mb-3">
-                        <i class="text-muted mr-2 fas fa-globe"></i> Languages</h2>
+                        <i class="text-muted mr-2 fas fa-globe"></i>
+                        <span id="languageHeader">Languages</span>
+                    </h2>
                     <div class="d-flex">
-                        <div class="circlechart" data-percentage="55">
+                        <div id="languageRus" class="circlechart" data-percentage="55">
                             Russian
                         </div>
-                        <div class="circlechart" data-percentage="80">
+                        <div id="languageEng" class="circlechart" data-percentage="80">
                             English
                         </div>
                     </div>
-
                 </div>
+
+                <!-- INTERESTS -->
                 <div class="col-md-6 interest">
                     <h2 class="comforta mb-3">
-                        <i class="text-muted mr-2 fas fa-heart"></i> Interests</h2>
+                        <i class="text-muted mr-2 fas fa-heart"></i>
+                        <span id="interestHeader">Interests</span>
+                    </h2>
                     <div class="position-relative">
                         <div class="gaming position-absolute animated zoomIn">
                             <span class="position-absolute themeBg" data-opacity="0.9"></span>
-                            <h3 class="position-absolute">Gaming</h3>
+                            <h3 id="gamingText" class="position-absolute">Gaming</h3>
                         </div>
                         <div class="reading position-absolute animated zoomIn">
                             <span class="position-absolute themeBg" data-opacity="0.7"></span>
-                            <h3 class="position-absolute">Reading</h3>
+                            <h3 id="readingText" class="position-absolute">Reading</h3>
                         </div>
                         <div class="music position-absolute animated zoomIn">
                             <span class="position-absolute themeBg" data-opacity="0.8"></span>
-                            <h3 class="position-absolute">Music</h3>
+                            <h3 id="musicText" class="position-absolute">Music</h3>
                         </div>
                         <div class="cinema position-absolute animated zoomIn">
                             <span class="position-absolute themeBg" data-opacity="0.9"></span>
-                            <h3 class="position-absolute">Cinema</h3>
+                            <h3 id="cinemaText" class="position-absolute">Cinema</h3>
                         </div>
                     </div>
                 </div>
@@ -279,11 +397,13 @@
     <!-- ***SCRIPTS*** -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/scroll/animateMePlz.jQuery.min.js"></script>
-    <script src="vendors/progressbar/jquery.lineProgressbar.js"></script>
-    <script src="vendors/position/jquery.progresstracker.min.js"></script>
     <script src="vendors/progresscircle/progresscircle.js"></script>
+    <script src="vendors/script/aze.js"></script>
+    <script src="vendors/script/eng.js"></script>
+    <script src="vendors/script/rus.js"></script>
     <script src="vendors/script/main.js"></script>
 </body>
 

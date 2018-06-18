@@ -1,0 +1,48 @@
+#progress-tracker{
+    position: fixed;
+    @extend %centerY;
+    right: 0;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 20;
+
+    li{
+        display: flex;
+        align-items: center;
+
+        & > div{
+            border: 1px solid $gray;
+            background: white;
+        }
+
+        .content{
+            user-select: none;
+            min-height: 20px;
+            min-width: 20px;
+            font-size: 0.8em;
+            border-radius: 20px;
+            margin-right: 5px;
+            padding: 3px 8px;
+            opacity: 0;
+            background: $gray;
+            color: white;
+            font-weight: bold;
+            animation-duration: 1.3s;
+        }
+
+        .circle{
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 5;
+
+            &.active{
+                background: $gray;
+            }
+        }
+    }
+}
