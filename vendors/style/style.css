@@ -297,10 +297,6 @@ a {
   border: 1px solid #6c757d;
 }
 
-.about, .softwareSkill, .education, .languageandhobby {
-  border: 1px solid olive;
-}
-
 .about {
   border-bottom: 2px solid #bcc1c6;
 }
@@ -542,7 +538,7 @@ a {
     text-decoration: none;
   }
 
-  #setting, #progress-tracker {
+  #menuWrapper {
     display: none;
   }
 

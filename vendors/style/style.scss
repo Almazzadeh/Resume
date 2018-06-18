@@ -1,14 +1,8 @@
 @import 'default';
 @import 'preloader';
 @import 'animation';
-// @import 'setting';
-// @import 'progresstracker';
 @import 'menu';
 
-
-.about, .softwareSkill, .education, .languageandhobby{
-    border: 1px solid olive;
-}
 
 // ABOUT SECTION
 .about{
@@ -16,10 +10,6 @@
 
     .image{
         width: 100%;
-        // padding-top: 100%;
-        // background: url('../p.jpg');
-        // background-size: cover;
-        // background-position: center center;
 
         img{
             width: 100%;
@@ -312,7 +302,7 @@
         text-decoration: none;
     }
 
-    #setting, #progress-tracker{
+    #menuWrapper{
         display: none;
     }
 
