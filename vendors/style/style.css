@@ -545,6 +545,10 @@ a {
   .themeBg, .myprogress {
     -webkit-print-color-adjust: exact;
   }
+
+  .softwareSkill .col-md-4 {
+    font-size: .9em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
