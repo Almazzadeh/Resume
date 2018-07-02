@@ -9,9 +9,9 @@ $(function () {
 
         // EDUCATION
         $('#educationHeader').html("Образование");
-        $('#school').html("Школа №158");
-        $('#lyceum').html("Технико-Гуманитарный Лицей");
-        $('#university').html("Азербайджанский Технический Университет");
+        $('#school, #schoolMobile').html("Школа №158");
+        $('#lyceum, #lyceumMobile').html("Технико-Гуманитарный Лицей");
+        $('#university, #universityMobile').html("Азербайджанский Технический Университет");
 
         // SOFTWARE SKILLS
         $('#softwareHeader').html("Технические навыки");
@@ -21,15 +21,9 @@ $(function () {
         $('#languageRus .circle-chart__subline').html("Русский язык");
         $('#languageEng .circle-chart__subline').html("Английский язык");
         $('#interestHeader').html("Интересы");
-        $('#gamingText').html("Видео игры");
-        $('#musicText').html("Музыка");
-        $('#readingText').html("Книги");
-        $('#cinemaText').html("Кино");
-
-        // SECTION POSITION
-        $('#progress-tracker li .content').eq(0).html("Обо мне")
-        $('#progress-tracker li .content').eq(1).html("Образование")
-        $('#progress-tracker li .content').eq(2).html("Технические навыки")
-        $('#progress-tracker li .content').eq(3).html("Знание языков и Интересы")
+        $('.gaming').html("Видео игры");
+        $('.music').html("Музыка");
+        $('.reading').html("Книги");
+        $('.cinema').html("Кино");
     })
 })

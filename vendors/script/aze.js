@@ -9,9 +9,9 @@ $(function () {
 
         // EDUCATION
         $('#educationHeader').html("Təhsil");
-        $('#school').html("158 №li məktəb");
-        $('#lyceum').html("Texniki Humanitar Lisey");
-        $('#university').html("Azərbaycan Texniki Universiteti");
+        $('#school, #schoolMobile').html("158 №li məktəb");
+        $('#lyceum, #lyceumMobile').html("Texniki Humanitar Lisey");
+        $('#university, #universityMobile').html("Azərbaycan Texniki Universiteti");
 
         // SOFTWARE SKILLS
         $('#softwareHeader').html("Texniki Biliklər");
@@ -21,9 +21,9 @@ $(function () {
         $('#languageRus .circle-chart__subline').html("Rus dili");
         $('#languageEng .circle-chart__subline').html("İngilis dili");
         $('#interestHeader').html("Maraqlar");
-        $('#gamingText').html("Video Oyun");
-        $('#musicText').html("Musiqi");
-        $('#readingText').html("Kitab");
-        $('#cinemaText').html("Kino");
+        $('.gaming').html("Video Oyun");
+        $('.music').html("Musiqi");
+        $('.reading').html("Kitab");
+        $('.cinema').html("Kino");
     })
 })

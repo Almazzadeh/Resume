@@ -9,9 +9,9 @@ $(function () {
 
         // EDUCATION
         $('#educationHeader').html("Education");
-        $('#school').html("№158 High School");
-        $('#lyceum').html("Technical Humanitarian Lyceum");
-        $('#university').html("Azerbaijan Technical University");
+        $('#school, #schoolMobile').html("№158 High School");
+        $('#lyceum, #lyceumMobile').html("Technical Humanitarian Lyceum");
+        $('#university, #universityMobile').html("Azerbaijan Technical University");
 
         // SOFTWARE SKILLS
         $('#softwareHeader').html("Software Skills");
@@ -21,10 +21,10 @@ $(function () {
         $('#languageRus .circle-chart__subline').html("Russian");
         $('#languageEng .circle-chart__subline').html("English");
         $('#interestHeader').html("Interests");
-        $('#gamingText').html("Gaming");
-        $('#musicText').html("Music");
-        $('#readingText').html("Reading");
-        $('#cinemaText').html("Cinema");
+        $('.gaming').html("Gaming");
+        $('.music').html("Music");
+        $('.reading').html("Reading");
+        $('.cinema').html("Cinema");
 
         // SECTION POSITION
         $('#progress-tracker li .content').eq(0).html("About")

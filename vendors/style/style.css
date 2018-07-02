@@ -407,6 +407,7 @@ a {
 #timeline .timeline-sm-xs .col-12 p.edu {
   padding: 10px;
   border-radius: 10px;
+  width: 50%;
 }
 #timeline .timeline-sm-xs .col-12 .circle {
   width: 20px;
@@ -418,6 +419,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   background: white;
+  z-index: 5;
 }
 
 .softwareSkill .col-lg-6 .row {
@@ -456,60 +458,49 @@ a {
 .languageandhobby .interest .position-relative {
   min-height: 250px;
 }
+.languageandhobby .interest .position-relative .interestCircle {
+  border-radius: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  text-transform: capitalize;
+  transform: translate(-50%, -50%);
+}
 .languageandhobby .interest .position-relative .gaming {
   width: 170px;
   height: 170px;
+  line-height: 170px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
   animation-duration: 3s;
 }
 .languageandhobby .interest .position-relative .reading {
   width: 120px;
   height: 120px;
+  line-height: 120px;
   top: 25%;
   left: 30%;
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
   animation-duration: 2.1s;
   animation-delay: 0.9s;
 }
 .languageandhobby .interest .position-relative .music {
   width: 130px;
   height: 130px;
+  line-height: 130px;
   top: 65%;
   left: 26%;
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
   animation-duration: 2.4s;
   animation-delay: 0.6s;
 }
 .languageandhobby .interest .position-relative .cinema {
   width: 120px;
   height: 120px;
+  line-height: 120px;
   left: 70%;
   bottom: -24%;
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
   animation-duration: 2.7s;
   animation-delay: 0.3s;
-}
-.languageandhobby .interest .position-relative span {
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  border-radius: 100%;
-}
-.languageandhobby .interest .position-relative h3 {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  font-size: 1.3em;
 }
 
 @media screen and (max-width: 767.5px) {
@@ -528,6 +519,20 @@ a {
   .languageandhobby .d-flex {
     justify-content: center;
   }
+
+  .reading {
+    top: 20% !important;
+    left: 24% !important;
+  }
+
+  .music {
+    top: 63% !important;
+    left: 15% !important;
+  }
+
+  .cinema {
+    left: 78% !important;
+  }
 }
 @media print {
   .imageWrapper {
@@ -542,7 +547,7 @@ a {
     display: none;
   }
 
-  .themeBg, .myprogress {
+  .themeBg, .myprogress, .interestCircle {
     -webkit-print-color-adjust: exact;
   }
 

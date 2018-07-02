@@ -61,10 +61,10 @@ $(function () {
 
                 if ($(this).data("textcolor") != null) {
                     $('.themeBg').css('color', $(this).data("textcolor"));
-                    $('.interest h3').css('color', $(this).data("textcolor"));
+                    $('.interestCircle').css('color', $(this).data("textcolor"));
                 } else {
                     $('.themeBg').css('color', "");
-                    $('.interest h3').css('color', "");
+                    $('.interestCircle').css('color', "");
                 }
             })
         })
@@ -147,7 +147,7 @@ $(function () {
     }
 
     //GO TO SECTION
-    $('.positionWrapper .circle').click(function(){
+    $('.positionWrapper .circle').click(function () {
         var className = $(this).data("class");
 
         var positionY = $("." + className).offset().top;
@@ -191,5 +191,26 @@ $(function () {
     // CHANGE COLOR FUNCTION
     function changeColor() {
         $('.circlechart').find('.success-stroke').css('stroke', themeColor);
+
+        $(".interestCircle").each(function () {
+            var alpha = $(this).data("rgba");
+            var r = hexToRgb(themeColor).r;
+            var g = hexToRgb(themeColor).g;
+            var b = hexToRgb(themeColor).b
+            $(this).css('background-color', "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")")
+        })
+    }
+
+
+
+
+    // FROM HEX TO RGB
+    function hexToRgb(hex) {
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
     }
 })
