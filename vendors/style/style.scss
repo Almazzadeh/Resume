@@ -162,13 +162,9 @@
 
 // SOFTWARE SKILLS
 .softwareSkill{
-    .col-lg-6 .row{
+    .col-md-6 .row{
         align-items: center;
         margin-bottom: 10px;
-
-        // &:not(:last-child){
-        //     margin-bottom: 10px;
-        // }
     }
 
     .myprogress{
@@ -264,6 +260,15 @@
     }
 }
 
+// SMALL DEVICES
+@media screen and (max-width: 576px){
+    .about .image img{
+        height: 40%;
+        width: 40%;
+    }
+}
+
+// SMALL AND MEDIUM DEVICES
 @media screen and (max-width: 767.5px){
 
     .about .rightSide{
