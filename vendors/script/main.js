@@ -1,4 +1,7 @@
 $(function () {
+    new WOW().init();
+    $("[data-toggle=tooltip]").tooltip()
+
     var themeColor = '#008080';
 
     changeColor()
@@ -111,10 +114,11 @@ $(function () {
             HideColorPalette();
             HideLanguageSection();
             $(this).addClass('active')
-            $('.positionWrapper .circle').eq(3).css('top', '-30px');
-            $('.positionWrapper .circle').eq(2).css('top', '-69px');
-            $('.positionWrapper .circle').eq(1).css('top', '-108px');
-            $('.positionWrapper .circle').eq(0).css('top', '-147px');
+            $('.positionWrapper .circle').eq(4).css('top', '-30px');
+            $('.positionWrapper .circle').eq(3).css('top', '-69px');
+            $('.positionWrapper .circle').eq(2).css('top', '-108px');
+            $('.positionWrapper .circle').eq(1).css('top', '-147px');
+            $('.positionWrapper .circle').eq(0).css('top', '-186px');
         }
     })
 
@@ -144,6 +148,7 @@ $(function () {
         $('.positionWrapper .circle').eq(1).css('top', '');
         $('.positionWrapper .circle').eq(2).css('top', '');
         $('.positionWrapper .circle').eq(3).css('top', '');
+        $('.positionWrapper .circle').eq(4).css('top', '');
     }
 
     //GO TO SECTION
@@ -157,26 +162,29 @@ $(function () {
     // ***** MENU END HERE *****
 
     // ***** SOFTWARE SKILLS *****
-    $('.myprogress-bar .title').each(function () {
-        $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-        }, {
-                duration: 2500,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now) + "%");
-                }
-            });
-    });
+    // $('.myprogress-bar .counter').each(function () {
+    //     console.log($(this).parent().css("width"));
+
+    //     $(this).prop('Counter', 0).animate({
+    //         Counter: $(this).text()
+    //     }, {
+    //             duration: 1500,
+    //             easing: 'swing',
+    //             step: function (now) {
+    //                 $(this).text(Math.ceil(now) + "%");
+    //             }
+    //         });
+    // });
 
     $(".myprogress-bar").each(function () {
         var maxWidth = $(this).data("width");
+        $(this).css("max-width", maxWidth + "%");
 
-        $(this).animate({
-            width: maxWidth + "%"
-        }, 2500)
+        // **IF DELETE ANIMATE.CSS CLASSES**
+        // $(this).animate({
+        //     width: maxWidth + "%"
+        // }, 2500)
     })
-
 
     // ***** LANGUAGE SKILLS PLUGIN *****
     $('.circlechart').circlechart()
@@ -200,9 +208,6 @@ $(function () {
             $(this).css('background-color', "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")")
         })
     }
-
-
-
 
     // FROM HEX TO RGB
     function hexToRgb(hex) {

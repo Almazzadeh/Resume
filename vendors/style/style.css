@@ -174,6 +174,11 @@ a {
           animation-delay: 2.1s;
 }
 
+.widthLeft {
+  -webkit-animation-name: widthLeft;
+  animation-name: widthLeft;
+}
+
 @-webkit-keyframes move {
   from {
     width: 0;
@@ -315,6 +320,26 @@ a {
   to {
     -webkit-transform: translate3d(0, 0, 0) translate(-50%, -50%);
             transform: translate3d(0, 0, 0) translate(-50%, -50%);
+  }
+}
+
+@-webkit-keyframes widthLeft {
+  from {
+    width: 0%;
+    visibility: visible;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes widthLeft {
+  from {
+    width: 0%;
+    visibility: visible;
+  }
+  to {
+    width: 100%;
   }
 }
 
@@ -631,6 +656,38 @@ a {
   z-index: 5;
 }
 
+.experience .square {
+  height: 150px;
+  width: 200px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.experience .square:not(:last-child) {
+  margin-right: 13px;
+  margin-bottom: 13px;
+}
+
+.experience .square * {
+  margin: 0;
+}
+
+.experience .square h6 {
+  margin: .2rem 0;
+}
+
 .softwareSkill .col-md-6 .row {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -642,10 +699,10 @@ a {
   height: 16px;
   background: #ccc;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .softwareSkill .myprogress .myprogress-bar {
-  width: 0;
   height: 100%;
   border-radius: 20px;
   text-align: center;
@@ -654,12 +711,6 @@ a {
 
 .softwareSkill .myprogress .myprogress-bar span {
   font-size: .7em;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-weight: bold;
 }
 
@@ -741,6 +792,9 @@ a {
   .about .image img {
     height: 40%;
     width: 40%;
+  }
+  .experience .square:not(:last-child) {
+    margin-right: 0;
   }
 }
 

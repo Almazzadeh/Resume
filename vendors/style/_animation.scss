@@ -34,6 +34,11 @@
     animation-delay: 2.1s;
 }
 
+.widthLeft {
+    -webkit-animation-name: widthLeft;
+    animation-name: widthLeft;
+  }
+
 
 // ANIMATIONS
 @keyframes move{
@@ -90,8 +95,6 @@
     }
 }
 
-
-
 @keyframes verticalmove{
     // from{height: 0;}
     // to{height: 85%;}
@@ -99,3 +102,26 @@
     from{transform: translate3d(0, -120%, 0) translate(-50%, -50%)}
     to{transform: translate3d(0, 0, 0) translate(-50%, -50%)}
 }
+
+// WIDTH ANIMATION 0%-100%
+@-webkit-keyframes widthLeft {
+    from {
+      width: 0%;
+      visibility: visible;
+    }
+  
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes widthLeft {
+    from {
+      width: 0%;
+      visibility: visible;
+    }
+  
+    to {
+      width: 100%;
+    }
+  }

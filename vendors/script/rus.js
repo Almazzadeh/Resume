@@ -13,6 +13,16 @@ $(function () {
         $('#lyceum, #lyceumMobile').html("Технико-Гуманитарный Лицей");
         $('#university, #universityMobile').html("Азербайджанский Технический Университет");
 
+        // EXPERIENCE
+        $('#experienceHeader').html("Стаж");
+        // freelance
+        $(".experience .square").eq(0).children("h4").html("Внештатно");
+        $(".experience .square").eq(0).children("h6").html("Дизайнер");
+        // WConSC
+        $(".experience .square").eq(1).children("h6").html("Дизайнер");
+        // code academy
+        $(".experience .square").eq(2).children("h6").html("Ментор");
+
         // SOFTWARE SKILLS
         $('#softwareHeader').html("Технические навыки");
 
